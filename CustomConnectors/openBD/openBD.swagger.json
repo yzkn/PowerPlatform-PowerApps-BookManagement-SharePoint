@@ -1,0 +1,334 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Default title",
+    "description": "ISBNコードを指定して、openBDから書誌・書影情報を取得するカスタムコネクタ",
+    "version": "1.0"
+  },
+  "host": "api.openbd.jp",
+  "basePath": "/v1",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/get": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "onix": {
+                    "type": "object",
+                    "properties": {
+                      "CollateralDetail": {
+                        "type": "object",
+                        "properties": {},
+                        "description": "CollateralDetail"
+                      },
+                      "RecordReference": {
+                        "type": "string",
+                        "description": "RecordReference"
+                      },
+                      "NotificationType": {
+                        "type": "string",
+                        "description": "NotificationType"
+                      },
+                      "ProductIdentifier": {
+                        "type": "object",
+                        "properties": {
+                          "ProductIDType": {
+                            "type": "string",
+                            "description": "ProductIDType"
+                          },
+                          "IDValue": {
+                            "type": "string",
+                            "description": "IDValue"
+                          }
+                        },
+                        "description": "ProductIdentifier"
+                      },
+                      "DescriptiveDetail": {
+                        "type": "object",
+                        "properties": {
+                          "TitleDetail": {
+                            "type": "object",
+                            "properties": {
+                              "TitleType": {
+                                "type": "string",
+                                "description": "TitleType"
+                              },
+                              "TitleElement": {
+                                "type": "object",
+                                "properties": {
+                                  "TitleElementLevel": {
+                                    "type": "string",
+                                    "description": "TitleElementLevel"
+                                  },
+                                  "TitleText": {
+                                    "type": "object",
+                                    "properties": {
+                                      "collationkey": {
+                                        "type": "string",
+                                        "description": "collationkey"
+                                      },
+                                      "content": {
+                                        "type": "string",
+                                        "description": "content"
+                                      }
+                                    },
+                                    "description": "TitleText"
+                                  }
+                                },
+                                "description": "TitleElement"
+                              }
+                            },
+                            "description": "TitleDetail"
+                          },
+                          "Contributor": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "SequenceNumber": {
+                                  "type": "string",
+                                  "description": "SequenceNumber"
+                                },
+                                "ContributorRole": {
+                                  "type": "array",
+                                  "items": {},
+                                  "description": "ContributorRole"
+                                },
+                                "PersonName": {
+                                  "type": "object",
+                                  "properties": {
+                                    "content": {
+                                      "type": "string",
+                                      "description": "content"
+                                    },
+                                    "collationkey": {
+                                      "type": "string",
+                                      "description": "collationkey"
+                                    }
+                                  },
+                                  "description": "PersonName"
+                                }
+                              }
+                            },
+                            "description": "Contributor"
+                          },
+                          "Collection": {
+                            "type": "object",
+                            "properties": {
+                              "CollectionType": {
+                                "type": "string",
+                                "description": "CollectionType"
+                              },
+                              "TitleDetail": {
+                                "type": "object",
+                                "properties": {
+                                  "TitleType": {
+                                    "type": "string",
+                                    "description": "TitleType"
+                                  },
+                                  "TitleElement": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "TitleElementLevel": {
+                                          "type": "string",
+                                          "description": "TitleElementLevel"
+                                        },
+                                        "PartNumber": {
+                                          "type": "string",
+                                          "description": "PartNumber"
+                                        },
+                                        "TitleText": {
+                                          "type": "object",
+                                          "properties": {
+                                            "collationkey": {
+                                              "type": "string",
+                                              "description": "collationkey"
+                                            },
+                                            "content": {
+                                              "type": "string",
+                                              "description": "content"
+                                            }
+                                          },
+                                          "description": "TitleText"
+                                        }
+                                      }
+                                    },
+                                    "description": "TitleElement"
+                                  }
+                                },
+                                "description": "TitleDetail"
+                              }
+                            },
+                            "description": "Collection"
+                          }
+                        },
+                        "description": "DescriptiveDetail"
+                      },
+                      "PublishingDetail": {
+                        "type": "object",
+                        "properties": {
+                          "Imprint": {
+                            "type": "object",
+                            "properties": {
+                              "ImprintName": {
+                                "type": "string",
+                                "description": "ImprintName"
+                              }
+                            },
+                            "description": "Imprint"
+                          },
+                          "PublishingDate": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "PublishingDateRole": {
+                                  "type": "string",
+                                  "description": "PublishingDateRole"
+                                },
+                                "Date": {
+                                  "type": "string",
+                                  "description": "Date"
+                                }
+                              }
+                            },
+                            "description": "PublishingDate"
+                          }
+                        },
+                        "description": "PublishingDetail"
+                      },
+                      "ProductSupply": {
+                        "type": "object",
+                        "properties": {
+                          "SupplyDetail": {
+                            "type": "object",
+                            "properties": {
+                              "ProductAvailability": {
+                                "type": "string",
+                                "description": "ProductAvailability"
+                              },
+                              "Price": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "PriceType": {
+                                      "type": "string",
+                                      "description": "PriceType"
+                                    },
+                                    "CurrencyCode": {
+                                      "type": "string",
+                                      "description": "CurrencyCode"
+                                    },
+                                    "PriceAmount": {
+                                      "type": "string",
+                                      "description": "PriceAmount"
+                                    }
+                                  }
+                                },
+                                "description": "Price"
+                              }
+                            },
+                            "description": "SupplyDetail"
+                          }
+                        },
+                        "description": "ProductSupply"
+                      }
+                    },
+                    "description": "onix"
+                  },
+                  "hanmoto": {
+                    "type": "object",
+                    "properties": {
+                      "datecreated": {
+                        "type": "string",
+                        "description": "datecreated"
+                      },
+                      "dateshuppan": {
+                        "type": "string",
+                        "description": "dateshuppan"
+                      },
+                      "datemodified": {
+                        "type": "string",
+                        "description": "datemodified"
+                      }
+                    },
+                    "description": "hanmoto"
+                  },
+                  "summary": {
+                    "type": "object",
+                    "properties": {
+                      "isbn": {
+                        "type": "string",
+                        "description": "isbn"
+                      },
+                      "title": {
+                        "type": "string",
+                        "description": "title"
+                      },
+                      "volume": {
+                        "type": "string",
+                        "description": "volume"
+                      },
+                      "series": {
+                        "type": "string",
+                        "description": "series"
+                      },
+                      "publisher": {
+                        "type": "string",
+                        "description": "publisher"
+                      },
+                      "pubdate": {
+                        "type": "string",
+                        "description": "pubdate"
+                      },
+                      "cover": {
+                        "type": "string",
+                        "description": "cover"
+                      },
+                      "author": {
+                        "type": "string",
+                        "description": "author"
+                      }
+                    },
+                    "description": "summary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get",
+        "description": "書誌情報の取得",
+        "operationId": "Get",
+        "x-ms-visibility": "important",
+        "parameters": [
+          {
+            "name": "isbn",
+            "in": "query",
+            "required": false,
+            "type": "integer"
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {},
+  "security": [],
+  "tags": []
+}
